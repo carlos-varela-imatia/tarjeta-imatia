@@ -1,140 +1,118 @@
-<!doctype html>
+const html = `
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Guardar contacto – Imatia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${emp.name}</title>
 
   <style>
     body {
-      font-family: system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 24px;
-      background: #f7f7f7;
-      color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
     .card {
-      max-width: 520px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    .header {
-      display: flex;
-      gap: 16px;
-      align-items: center;
+      background: white;
+      padding: 40px 24px;
+      border-radius: 20px;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .logo {
-      width: 54px;
-      height: 54px;
-      border-radius: 8px;
-      object-fit: contain;
+      font-weight: bold;
+      color: #ff4a3d;
+      margin-bottom: 20px;
     }
 
-    .name {
-      font-size: 1.35rem;
-      font-weight: 600;
+    h1 {
+      margin: 0;
+      font-size: 24px;
     }
 
     .role {
-      font-size: 1rem;
       color: #666;
-      margin-top: 2px;
+      margin: 8px 0 24px;
     }
 
-    .cta {
-      margin-top: 28px;
-      text-align: center;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #ff4d3b;
-      color: #fff;
-      padding: 14px 22px;
+    .btn-primary {
+      display: block;
+      background: #ff4a3d;
+      color: white;
+      padding: 16px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
-      transition: 0.2s;
+      margin-bottom: 16px;
     }
 
-    .btn:hover {
-      background: #ff2e1c;
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
     }
 
-    .help {
-      margin-top: 14px;
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-
-    .brand {
-      margin-top: 32px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #888;
-    }
-
-    .brand a {
-      color: #ff4d3b;
+    .btn-secondary {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: 600;
+      background: #f0f0f0;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-weight: 500;
+      color: #ff4a3d;
     }
   </style>
 </head>
 
 <body>
   <div class="card">
+    <div class="logo">imatia</div>
 
-    <div class="header">
-      <img src="./logo.png" class="logo" alt="Logo Imatia">
-      <div>
-        <div class="name">José María Ozores</div>
-        <div class="role">Desarrollo de Negocio</div>
-      </div>
-    </div>
+    <h1>${emp.name}</h1>
+    <div class="role">${emp.role}</div>
 
-    <div class="cta">
-      <a id="addBtn" class="btn" href="./jose_maria_ozores.vcf">
-        Guardar contacto
+    <a class="btn-primary" href="../vcf/${emp.id}.vcf">
+      Guardar contacto
+    </a>
+
+    <div class="actions">
+      <a class="btn-secondary" href="tel:${emp.phone}">
+        📞 Llamar
       </a>
-
-      <div class="help" id="helpText">
-        El contacto se descargará automáticamente. Si no se abre, pulsa sobre el archivo descargado.
-      </div>
+      <a class="btn-secondary" href="mailto:${emp.email}">
+        ✉️ Email
+      </a>
     </div>
 
-    <div class="brand">
-      <a href="https://www.imatia.com" target="_blank">www.imatia.com</a>
+    <div class="info">
+      El contacto se guardará automáticamente en tu dispositivo
     </div>
 
+    <div class="footer">
+      www.imatia.com
+    </div>
   </div>
-
-<script>
-(function() {
-    var ua = navigator.userAgent || navigator.vendor || window.opera;
-    var isIOS = /iPhone|iPad|iPod/.test(ua);
-    var isAndroid = /Android/i.test(ua);
-
-    var help = document.getElementById("helpText");
-
-    if (isIOS) {
-      help.innerHTML = 
-        "En iPhone se abrirá en Contactos. Si te pregunta, selecciona “Crear nuevo contacto”.";
-    } 
-    else if (isAndroid) {
-      help.innerHTML =
-        "En Android puede descargarse primero. Toca el archivo .vcf descargado y añádelo a Contactos.";
-    }
-})();
-</script>
-
 </body>
 </html>
+`;
