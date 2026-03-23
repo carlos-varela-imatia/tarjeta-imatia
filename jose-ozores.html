@@ -1,10 +1,137 @@
 
-<html>
-<body style="font-family:sans-serif;padding:40px">
-<h1>José María Ozores</h1>
-<p>Desarrollo de Negocio</p>
-<p>+34659330303</p>
-<p>jose.ozores@imatia.com</p>
-<a href="../vcf/jose-ozores.vcf">Guardar contacto</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José María Ozores</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 0;
+    }
+
+    .card {
+      background: white;
+      padding: 32px 24px;
+      border-radius: 20px;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .logo img {
+      width: 90px;
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .role {
+      color: #666;
+      margin: 6px 0 20px;
+    }
+
+    .btn-primary {
+      display: block;
+      background: #ff4a3d;
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btn-secondary {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      background: #f0f0f0;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-weight: 500;
+      color: #ff4a3d;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+
+    <div class="logo">
+      <img src="https://www.imatia.com/wp-content/uploads/2020/06/logo-imatia.png" />
+    </div>
+
+    <img class="avatar"
+         src="photos/jose.jpg"
+         onerror="this.src='https://via.placeholder.com/100'" />
+
+    <h1>José María Ozores</h1>
+    <div class="role">Desarrollo de Negocio</div>
+
+    <a id="saveBtn"
+       class="btn-primary"
+       href="vcf/jose-ozores.vcf"
+       onclick="alert('Contacto descargado ✔️')">
+      Guardar contacto
+    </a>
+
+    <div class="actions">
+      <a class="btn-secondary" href="tel:+34659330303">
+        📞 Llamar
+      </a>
+      <a class="btn-secondary" href="mailto:jose.ozores@imatia.com">
+        ✉️ Email
+      </a>
+    </div>
+
+    <div class="footer">
+      www.imatia.com
+    </div>
+
+  </div>
+
+  <script>
+    const btn = document.getElementById("saveBtn");
+    const ua = navigator.userAgent.toLowerCase();
+
+    if (ua.includes("iphone") || ua.includes("ipad")) {
+      btn.innerText = "Guardar en iPhone";
+    } else if (ua.includes("android")) {
+      btn.innerText = "Guardar en Android";
+    }
+  </script>
+
 </body>
 </html>
