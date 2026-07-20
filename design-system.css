@@ -1,0 +1,101 @@
+/* ============================================================
+   Imatia — Design tokens
+   Origen: Imatia Onboarding Design System (proyecto Claude).
+   Colores, tipografía, espaciado, radios, sombras e iconografía
+   de marca. Un único fichero plano (sin build step).
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+:root {
+  /* --- Brand coral --- */
+  --coral-50:  #FEF0EC;
+  --coral-400: #FF664C;   /* hover */
+  --coral-500: #FF5033;   /* logo + coral primario */
+  --coral-600: #EF421F;   /* pressed */
+
+  /* --- Ink / neutros (escala gris cálido) --- */
+  --ink-900: #2C2A29;   /* texto principal, botones oscuros */
+  --ink-600: #7A756F;   /* texto secundario */
+  --ink-500: #9C9893;   /* texto muted */
+  --ink-300: #DEDBD7;   /* borde fuerte */
+  --ink-200: #EAE8E5;   /* borde por defecto */
+  --ink-100: #F2F1EF;   /* fill sutil / hover */
+  --ink-50:  #F7F7F7;   /* fondo de app */
+  --white:   #FFFFFF;
+
+  /* --- Estado --- */
+  --danger-500: #E24B4A;
+  --danger-50:  #FBF2F2;
+  --info-900:   #0C447C;
+
+  /* --- Alias semánticos --- */
+  --brand:            var(--coral-500);
+  --brand-hover:      var(--coral-400);
+  --brand-active:     var(--coral-600);
+  --brand-tint:       var(--coral-50);
+
+  --bg-app:           var(--ink-50);
+  --surface-card:     var(--white);
+  --surface-sunken:   var(--ink-100);
+  --surface-hover:    var(--ink-100);
+
+  --text-primary:     var(--ink-900);
+  --text-secondary:   var(--ink-600);
+  --text-muted:       var(--ink-500);
+  --text-on-brand:    var(--white);
+
+  --border-default:   var(--ink-200);
+  --border-strong:    var(--ink-300);
+
+  --ring-focus:       0 0 0 3px rgba(255, 80, 51, 0.28);
+
+  --btn-dark-bg:      var(--ink-900);
+  --btn-dark-fg:      var(--white);
+
+  /* --- Tipografía --- */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  --fw-regular:  400;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  --fs-display: 28px; --lh-display: 34px;
+  --fs-h1:      22px; --lh-h1:      28px;
+  --fs-h2:      18px; --lh-h2:      24px;
+  --fs-body:    15px; --lh-body:    22px;
+  --fs-sm:      14px; --lh-sm:      20px;
+  --fs-xs:      13px; --lh-xs:      18px;
+
+  /* --- Espaciado (escala de 8) --- */
+  --space-4:  4px;
+  --space-8:  8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --pad-btn-x: 20px; --pad-btn-y: 11px;
+  --pad-card:  24px;
+
+  /* --- Radios --- */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-pill: 999px;
+  --radius-full: 50%;
+
+  /* --- Sombras --- */
+  --shadow-card:   0 1px 2px rgba(44, 42, 41, 0.04), 0 1px 3px rgba(44, 42, 41, 0.06);
+  --shadow-raised: 0 4px 12px rgba(44, 42, 41, 0.08), 0 1px 3px rgba(44, 42, 41, 0.06);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}

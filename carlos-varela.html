@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carlos Varela</title>
+  <link rel="stylesheet" href="design-system.css">
 
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f5f5f5;
+      font-family: var(--font-sans);
+      background: var(--bg-app);
+      color: var(--text-primary);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,71 +21,84 @@
     }
 
     .card {
-      background: white;
-      padding: 32px 24px;
-      border-radius: 20px;
+      box-sizing: border-box;
+      background: var(--surface-card);
+      padding: var(--pad-card);
+      border-radius: var(--radius-lg);
       max-width: 380px;
       width: 90%;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-card);
     }
 
     .logo img {
       width: 90px;
-      margin-bottom: 20px;
+      margin-bottom: var(--space-16);
     }
 
     .avatar {
       width: 100px;
       height: 100px;
-      border-radius: 50%;
+      border-radius: var(--radius-full);
       object-fit: cover;
-      margin: 0 auto 16px;
+      margin: 0 auto var(--space-16);
       display: block;
     }
 
     h1 {
       margin: 0;
-      font-size: 22px;
+      font: var(--fw-bold) var(--fs-h1)/var(--lh-h1) var(--font-sans);
     }
 
     .role {
-      color: #666;
-      margin: 6px 0 20px;
+      color: var(--text-secondary);
+      margin: var(--space-4) 0 var(--space-24);
     }
 
     .btn-primary {
-      display: block;
-      background: #ff4a3d;
-      color: white;
-      padding: 16px;
-      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      background: var(--brand);
+      color: var(--text-on-brand);
+      padding: var(--space-16);
+      border-radius: var(--radius-pill);
       text-decoration: none;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-weight: var(--fw-semibold);
+      margin-bottom: var(--space-16);
+      transition: background 140ms ease;
     }
+    .btn-primary:hover { background: var(--brand-hover); }
 
     .actions {
       display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: var(--space-8);
+      margin-bottom: var(--space-24);
     }
 
     .btn-secondary {
       flex: 1;
-      padding: 12px;
-      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      padding: var(--space-12);
+      border-radius: var(--radius-pill);
       text-decoration: none;
-      background: #f0f0f0;
-      color: #333;
-      font-size: 14px;
+      background: var(--white);
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
+      font-size: var(--fs-sm);
       text-align: center;
+      transition: background 140ms ease;
     }
+    .btn-secondary:hover { background: var(--surface-hover); }
 
     .footer {
-      margin-top: 20px;
-      font-weight: 500;
-      color: #ff4a3d;
+      margin-top: var(--space-16);
+      font-weight: var(--fw-semibold);
+      color: var(--brand);
     }
   </style>
 </head>
@@ -110,10 +125,10 @@
 
     <div class="actions">
       <a class="btn-secondary" href="tel:+34 617179546">
-        📞 Llamar
+        <span class="material-symbols-outlined">call</span> Llamar
       </a>
       <a class="btn-secondary" href="mailto:carlos.varela@imatia.com">
-        ✉️ Email
+        <span class="material-symbols-outlined">mail</span> Email
       </a>
       
     </div>
